@@ -25,14 +25,37 @@ def add_farmer(request):
   # checking existing -
     check_existing = farmer.objects.filter(Farmer_name=farmer_name) and farmer.objects.filter(Contact_num = contact_num) and farmer.objects.filter(Email_id = email_id) and farmer.objects.filter(Password = password).exists()
     if check_existing:
-      messages.error(request,"User already exists! Please login...")
+      messages.error(request,"The email address is already in use by another account.!! Please login...")
       return redirect('/login/farmerlogin/')
   
     else:
       f.save()
-      messages.success(request,'successfully saved...')
+      messages.success(request,'Your Account has been created successfully!!')
     # return redirect('login/farmerlogin/')
       return render(request,"home/index.html",{})
+
+
+
+def loginfarmer(request):
+    if request.method == "POST":
+        emailid = request.POST.get("EmailId")
+        password1 = request.POST.get("Logpassword")
+
+        # Check if both email and password match an existing farmer
+        try:
+            farmer_obj = farmer.objects.get(Email_id=emailid, Password=password1)
+        except farmer.DoesNotExist:
+            messages.error(request, "Please enter a valid email or password.")
+            return redirect('/login/farmerlogin/')
+        else:
+            request.session['id'] = farmer_obj.id
+            request.session['Farmer_name'] = farmer_obj.Farmer_name
+            request.session['Email_id'] = farmer_obj.Email_id
+            messages.success(request, 'Logged In Successfully!!')
+            return render(request, "home/index.html", {})
+    else:
+        return redirect('/login/farmerlogin/')
+  
 
 # scholar form validation :-
 def add_scholar(request):
@@ -49,44 +72,29 @@ def add_scholar(request):
   # checking existing -
   check_existing = scholar.objects.filter(Scholar_name=scholar_name) and scholar.objects.filter(Contact_num = contact_num) and scholar.objects.filter(Email_id = email_id) and scholar.objects.filter(Password = password).exists()
   if check_existing:
-    messages.error(request,"User already exists! Please login...")
+    messages.error(request,"The email address is already in use by another account.!! Please login...")
     return redirect('/login/scholarlogin/')
 
   else:
     s.save()
-    messages.success(request,'successfully saved..Please login')
+    messages.success(request,'Your Account has been created successfully!! Please login')
     return redirect('/login/scholarlogin/')
-
-def loginfarmer(request):
-  if request.method == "POST":
-    emailid = request.POST.get("EmailId")
-    password1 = request.POST.get("Logpassword")
-  f = farmer()
-  f.Email_id = emailid
-  f.Password = password1
-
-  # checking existing -
-  check_existing =farmer.objects.filter(Email_id = emailid) and farmer.objects.filter(Password = password1).exists()
-
-  if check_existing:
-    return render(request,"home/index.html",{})
-  else:
-    messages.success(request,"please register yourself first....")
-    return redirect('/login/farmerlogin/')
   
 def loginscholar(request):
-  if request.method == "POST":
-    emailsc = request.POST.get("scholarEmail")
-    passw = request.POST.get("scholarPassword")
-  f = scholar()
-  f.Email_id = emailsc
-  f.Password = passw
+    if request.method == "POST":
+        emailsc = request.POST.get("scholarEmail")
+        passw = request.POST.get("scholarPassword")
 
-  # checking existing -
-  check_existing =scholar.objects.filter(Email_id = emailsc) and scholar.objects.filter(Password = passw).exists()
-
-  if check_existing:
-    return redirect('/scholar/')
-  else:
-    messages.error(request,"please register yourself first....")
-    return redirect('/login/scholarlogin/')
+        # Check if both email and password match an existing scholar
+        try:
+            scholar_obj = scholar.objects.get(Email_id=emailsc, Password=passw)
+        except scholar.DoesNotExist:
+            messages.error(request, "Please enter a valid email or password.")
+            return redirect('/login/scholarlogin/')
+        else:
+            request.session['Scholar_name'] = scholar_obj.Scholar_name
+            request.session['Email_id'] = scholar_obj.Email_id
+            messages.success(request, 'Logged In Successfully!!')
+            return redirect('/scholar/')
+    else:
+        return redirect('/login/scholarlogin/')

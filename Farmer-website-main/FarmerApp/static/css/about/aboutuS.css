@@ -1,112 +1,49 @@
-/* About Us page styles */
-
 .about-section {
-  text-align: center;
-  margin-bottom: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
   padding: 20px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 70px;
   animation: slide-up 1s ease-out;
 }
 
 .about-section h2 {
-  font-size: 36px;
-  margin-bottom: 20px;
-  animation: scale-in 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-  color: var(--text-color);
-  transition: color 0.3s ease; /* Add transition effect */
-  border-bottom: 1px solid rgb(26, 25, 25);
-}
-
-.about-section h2:hover {
-  color: #054704; /* Change text color on hover */
-  border-bottom: 4px solid rgb(128, 167, 69);
-}
-
-.about-section p {
-  font-size: 18px;
-  line-height: 1.6;
-  margin-bottom: 20px;
-  animation: slide-up 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-  color: var(--text-color);
-  transition: color 0.3s ease; /* Add transition effect */
-}
-
-.about-section p:hover {
-  color: #777; /* Change text color on hover */
-}
-
-.about-section img {
-  max-width: 100%;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  animation: scale-in 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-  transition: transform 0.3s ease; /* Add transition effect */
-}
-
-.about-section img:hover {
-  transform: scale(1.05); /* Increase size on hover */
-}
-
-.team-section {
+  font-size: 28px;
   text-align: center;
-  margin-top: 40px;
-  animation: slide-up 1s ease-out;
+  margin-bottom: 15px;
+  color: var(--heading-color);
+  transition: color 0.3s ease;
 }
 
-.team-members {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 5px;
-}
-
-.team-member {
-  border: 2px solid black;
-  text-align: center;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(81, 1, 1, 0.1);
-  padding: 20px;
-  flex: 1 0 calc(33.33% - 20px); /* Adjust this value for responsiveness */
-  max-width: calc(33.33% - 20px); /* Adjust this value for responsiveness */
-  animation: fade-in 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-}
-
-.team-member img {
-  border-radius: 50%;
-  width: 150px; /* Set the width of the image */
-  height: 150px; /* Set the height of the image */
-  object-fit: cover;
-  margin-bottom: 5px;
-  transition: transform 0.3s ease; /* Add transition effect */
-}
-
-.team-member img:hover {
-  transform: scale(1.3); /* Increase size on hover */
-}
-
-.team-member h3 {
-  font-size: 24px;
-  margin-bottom: 5px;
-  color: #333; /* Set text color */
-  transition: color 0.3s ease; /* Add transition effect */
-}
-
-.team-member h3:hover {
-  color: #ff6600; /* Change text color on hover */
-}
-
-.team-member p {
+.about-section .text {
   font-size: 16px;
-  margin-bottom: 20px;
-  color: #555; /* Set text color */
-  transition: color 0.3s ease; /* Add transition effect */
+  line-height: 1.6;
+  margin-bottom: 15px;
+  color: var(--cards-text);
+  animation: slide-up 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
-.team-member p:hover {
-  color: #030303; /* Change text color on hover */
+.about-section .abt_img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+  animation: scale-in 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+.about-section img:hover {
+  transform: scale(1.05);
+}
+/* Responsive layout */
+@media only screen and (max-width: 600px) {
+  .about-section {
+    padding: 10px;
+  }
+
+  .about-section h2 {
+    font-size: 24px;
+  }
+
+  .about-section .text {
+    font-size: 14px;
+  }
 }
 
 @keyframes scale-in {
@@ -137,34 +74,75 @@
     opacity: 1;
   }
 }
+.team-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  padding: 20px;
+  animation: slide-up 1s ease-out;
+}
 
-/* Responsive styles */
-@media screen and (max-width: 768px) {
-  .about-section h2 {
-    font-size: 28px;
-  }
-  .about-section p {
-    font-size: 16px;
-  }
+.team-section h2 {
+  margin-bottom: 25px;
+  padding: 2px 8px 16px 8px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1;
+  color: var(--heading-color);
+}
+
+.team-members {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.team-member {
+  border: 2px solid var(--heading-color);
+  text-align: center;
+  background-color: var(--cards-bg);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(81, 1, 1, 0.1);
+  padding: 20px;
+  flex: 1 0 calc(50% - 20px);
+  max-width: calc(50% - 20px);
+  animation: fade-in 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.team-member img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 5px;
+  transition: transform 0.3s ease;
+}
+
+.team-member img:hover {
+  transform: scale(1.1);
+}
+
+.team-member h3 {
+  font-size: 20px;
+  margin-bottom: 5px;
+  color: var(--heading-color);
+  transition: color 0.3s ease;
+}
+
+.team-member p {
+  font-size: 14px;
+  margin-bottom: 20px;
+  color: var(--cards-text);
+  transition: color 0.3s ease;
+}
+
+@media only screen and (max-width: 768px) {
   .team-member {
-    flex: 1 0 calc(50% - 20px);
-    max-width: calc(50% - 20px);
+    flex: 1 0 calc(100% - 20px);
+    max-width: calc(100% - 20px);
   }
-}
-.abt_img {
-  width: 50%;
-  border-radius: 50px;
-  border: 2px solid black;
-}
-.logo {
-  width: 10%;
-  border: 2px solid rgb(197, 196, 196);
-}
-.kisanlogo:hover {
-  border: 2px solid rgb(31, 79, 10);
-}
-.text {
-  font-size: large;
-  font-style: italic;
-  font-weight: 500;
 }

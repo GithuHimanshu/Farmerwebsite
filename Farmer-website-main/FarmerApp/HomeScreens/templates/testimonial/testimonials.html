@@ -14,14 +14,14 @@
 
 <body>
   {% include "navbar/navbar.html" %}
-  <!-- <main>
+  <main>
     <div class="logo">
       <a href="/"><img src="{%static 'images/l1.png'%}" alt="Logo" /></a>
     </div>
     <h1>Testimonials</h1>
     {% for t in testi %}
     <div class="testimonial">
-      <img src="/media/{{t.picture}}" alt="Testimonial Author"/>
+      <img src="/media/{{t.picture}}" alt="Testimonial Author" />
       <div class="content">
         <p class="quote">
           {{ t.testimonial }}
@@ -32,8 +32,8 @@
     </div>
     {% endfor %}
 
-  </main> -->
-  <!-- <section class="container">
+  </main>
+  <section class="container">
     <div class="testimonial mySwiper">
       <div class="testi-content swiper-wrapper">
         <div class="slide swiper-slide">
@@ -89,12 +89,13 @@
       <div class="swiper-button-prev nav-btn"></div>
       <div class="swiper-pagination"></div>
     </div>
-  </section> -->
-  <!-- <script src="{%static 'js/myswiper.js/'%}"></script> -->
+  </section>
+  <script src="{%static 'js/myswiper.js/'%}"></script>
 
-  <!-- JavaScript -->
-  <!-- <script src="{%static 'js/swiper-bundle.min.js/'%}"></script> -->
+
+  <script src="{%static 'js/swiper-bundle.min.js/'%}"></script>
+  {% include "footer/footer.html" %}
 </body>
-<!-- {% include "footer/footer.html" %} -->
+
 
 </html>

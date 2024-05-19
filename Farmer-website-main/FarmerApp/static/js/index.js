@@ -61,3 +61,11 @@ const swiper = new Swiper(".swiper", {
     slidesPerView: "auto",
     spaceBetween: 20,
 });
+window.addEventListener('scroll', function () {
+    var header = document.querySelector('nav');
+    if (window.scrollY > 200) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+});

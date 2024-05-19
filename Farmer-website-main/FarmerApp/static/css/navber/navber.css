@@ -12,20 +12,30 @@
 
 /* ===== Colours ===== */
 :root {
-  --body-color: #ffffdd;
-  --nav-color: #898121;
+  --body-color: #ebebe8;
+  --nav-color: #778a35;
+  --nav-logo-color: #d1e2c4;
   --dropdown-color: #f9f9f9;
   --dropdown-text-color: #010718;
-  --side-nav: #898121;
+  --side-nav: #778a35;
   --text-color: #fefbf6;
-  --heading-color: #a2c579;
+  --heading-color: #59981ace;
   --search-bar: #f2f2f2;
-  --search-text: #010718;
-  --sub-heading: #016a70d2;
+  --search-text: #31352e;
+  --sub-heading: #31352e;
   --text-dark: #0f172a;
-  --text-light: #64748b;
-}
 
+  --cards-bg: #f8f8f8;
+  --cards-text: #212121;
+  --primary-green: #212121;
+  --button-col: #3d550c;
+  --button-col-hover: #898021c9;
+  --button-secondary: #145214;
+  --button-secondary: #145214;
+  --footer-bg: #333333;
+  --cards-heading: #81b622;
+  --cards-bd: 20px 20px 60px #00000041, inset -20px -20px 60px #ffffff40;
+}
 body {
   height: 100vh;
   background-color: var(--body-color);
@@ -36,10 +46,14 @@ body.dark {
   --nav-color: #242526;
   --side-nav: #242526;
   --text-color: #ccc;
-  --heading-color: #898121;
+  --heading-color: #778a35;
   --search-bar: #242526;
   --dropdown-color: #18191a;
   --dropdown-text-color: #ccc;
+  --cards-bg: #242526;
+  --cards-text: #ccc;
+  --cards-bd: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  --sub-heading: #ccc;
 }
 
 nav {
@@ -49,20 +63,21 @@ nav {
   height: 70px;
 
   width: 100%;
-  background-color: var(--nav-color);
   z-index: 100;
 }
 
-body.dark nav {
-  border: 1px solid #393838;
+.scrolled {
+  background: var(--nav-color);
 }
-
+/* body.dark .scrolled {
+  background: var(--nav-color);
+} */
 nav .nav-bar {
   position: relative;
   height: 100%;
   max-width: 1000px;
   width: 100%;
-  background-color: var(--nav-color);
+  border: none !important;
   margin: 0 auto;
   padding: 0 30px;
   display: flex;
@@ -86,7 +101,7 @@ nav .nav-bar .logo a {
   text-decoration: none;
 }
 span {
-  color: var(--heading-color);
+  color: var(--nav-logo-color);
   font-weight: 600;
 }
 
@@ -149,12 +164,17 @@ span {
 .dark-light i,
 .searchToggle i {
   position: absolute;
-  color: var(--text-color);
+  color: var(--nav-logo-color);
   font-size: 22px;
   cursor: pointer;
   transition: all 0.3s ease;
 }
-
+i:hover {
+  background-color: var(--body-color);
+  color: var(--button-col);
+  border-radius: 50%;
+  padding: 0.4rem;
+}
 .dark-light i.sun {
   opacity: 0;
   pointer-events: none;

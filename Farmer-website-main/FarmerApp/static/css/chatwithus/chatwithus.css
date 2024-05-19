@@ -45,7 +45,7 @@
 
 .message-info p {
   margin: 5px 0;
-  color: var(--text-light);
+  color: var(--cards-text);
 }
 
 .name {
@@ -54,7 +54,7 @@
 }
 
 .received {
-  background: var(--text-color);
+  background: var(--cards-bg);
 }
 
 .sent {
@@ -80,10 +80,10 @@
   padding: 15px 24px;
   border-radius: 6px;
   border: 1px solid #e0e0e0;
-  background: white;
+  background: var(--cards-bg);
 
   font-size: 16px;
-  color: #6b7280;
+  color: var(--cards-text);
 
   outline: none;
   resize: none;

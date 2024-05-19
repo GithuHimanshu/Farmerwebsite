@@ -111,7 +111,7 @@ footer {
 .main-heading-footer {
   width: 100%;
   text-align: left;
-  color: var(--heading-color);
+  color: var(--nav-logo-color);
   font-size: 1.6em;
   white-space: nowrap;
   margin-bottom: 15px;
