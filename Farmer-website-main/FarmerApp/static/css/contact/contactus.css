@@ -1,19 +1,12 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #c8c5c5; /* Background color applied to the entire page */
-  color: #070000;
-}
-
 .header {
   text-align: center;
-  margin-top: 15px;
+  margin-top: 70px;
+  animation: slideInRight 1s ease;
 }
 
 .header h1 {
   font-size: 50px;
-  color: #242524;
+  color: var(--heading-color);
   margin-bottom: 20px;
   border-bottom: 1px solid black;
 }
@@ -21,7 +14,7 @@ body {
 .header p {
   font-size: 27px;
   margin-top: 0;
-  color: #080808;
+  color: var(--sub-heading);
 }
 
 .contact-info {
@@ -34,13 +27,13 @@ body {
   margin: 5px 0;
   font-size: 25px;
   line-height: 1.6;
-  color: #090909;
+  color: var(--cards-text);
 }
 
 .contact-info i {
   margin-right: 10px;
   font-size: 20px;
-  color: #06970a;
+  color: var(--button-secondary);
 }
 
 .social-icons {
@@ -51,7 +44,7 @@ body {
 .social-icons a {
   display: inline-block;
   margin: 0 10px;
-  color: #0b0b0b;
+  color: var(--cards-text);
   font-size: 30px;
   transition: color 0.3s;
 }
@@ -63,17 +56,20 @@ body {
 form {
   max-width: 500px;
   margin: 0 auto;
-  background-color: #5b5757;
+  background-color: var(--cards-bg);
   border-radius: 10px;
   padding: 20px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 35px;
+  mix-blend-mode: 20px;
+  box-shadow: var(--cards-bd);
+  animation: slideInRight 1s ease;
 }
 
 label {
   display: block;
   font-size: 18px;
   margin-bottom: 5px;
-  color: #555;
+  color: var(--nav-color);
 }
 
 input[type="text"],
@@ -82,7 +78,8 @@ textarea {
   width: calc(100% - 22px);
   padding: 10px;
   margin-bottom: 20px;
-  border: 1px solid #ccc;
+  background-color: var(--cards-bg);
+  border: 1px solid var(--heading-color);
   border-radius: 5px;
   font-size: 16px;
   transition: border-color 0.3s;
@@ -107,6 +104,7 @@ button {
   cursor: pointer;
   font-size: 18px;
   transition: background-color 0.1s;
+  animation: colorChange 2s infinite alternate;
 }
 
 button:hover {
@@ -115,6 +113,7 @@ button:hover {
 
 .form-group {
   position: relative;
+  animation: scaleIn 1s ease;
 }
 
 .form-group .icon {
@@ -122,12 +121,26 @@ button:hover {
   top: 50%;
   right: 30px;
   transform: translateY(-50%);
-  color: #ccc;
+  color: var(--heading-color);
   transition: color 0.3s;
 }
 
 .form-group:hover .icon {
-  color: #666;
+  color: var(--heading-color);
+}
+
+.submit-button {
+  text-align: center;
+}
+
+.clogo {
+  width: 10%;
+  border: 2px solid rgb(197, 196, 196);
+  border-radius: 50%;
+}
+
+.clogo:hover {
+  border: 2px solid rgb(31, 79, 10);
 }
 
 @keyframes slideInRight {
@@ -137,15 +150,6 @@ button:hover {
   }
   to {
     transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
     opacity: 1;
   }
 }
@@ -160,42 +164,12 @@ button:hover {
 }
 
 @keyframes colorChange {
-  0% {
+  0%,
+  100% {
     background-color: #4caf50;
   }
 
   50% {
     background-color: #45a049;
   }
-
-  100% {
-    background-color: #4caf50;
-  }
-}
-
-.header {
-  animation: slideInRight 1s ease;
-}
-
-form {
-  animation: slideInRight 1s ease;
-}
-
-.form-group {
-  animation: scaleIn 1s ease;
-}
-
-button {
-  animation: colorChange 2s infinite;
-}
-
-.submit-button {
-  text-align: center;
-}
-.logo {
-  width: 10%;
-  border: 2px solid rgb(197, 196, 196);
-}
-.logo:hover {
-  border: 2px solid rgb(31, 79, 10);
 }

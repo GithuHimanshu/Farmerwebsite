@@ -32,11 +32,13 @@ body {
 }
 
 .form-signin .form-control-feedback.light {
+  background-color: var(--body-color);
   color: #495057;
   /* Dark Gray */
 }
 
 .form-signin .form-control-feedback.dark {
+  background-color: var(--body-color);
   color: #dee2e6;
   /* Light Gray */
 }
@@ -50,4 +52,7 @@ body {
 }
 .mt-5 {
   margin-top: 5rem !important;
+}
+.bg {
+  background-color: var(--body-color) !important;
 }
