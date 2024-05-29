@@ -140,6 +140,15 @@
       var dropdownMenu = document.getElementById("dropdownMenu");
       dropdownMenu.style.display = dropdownMenu.style.display === "block" ? "none" : "block";
     }
+
+    window.addEventListener('scroll', function () {
+      var header = document.querySelector('nav');
+      if (window.scrollY > 200) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
   </script>
 
 </body>

@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import Testimonial
 from .models import Feedback
 from .models import ContactUsForm,UploadResearch
+from django.contrib import messages
 
 # Create your views here.
 def home(request):
@@ -41,6 +42,7 @@ def contactusform(request):
     c.Email = request.POST.get("email")
     c.Message = request.POST.get("message")
     c.save()
+    messages.success(request, 'Your Message Sent Successfully!!')
     return render(request,"home/index.html",{})
   
 def research(request):
@@ -52,4 +54,5 @@ def research(request):
     r.Profile = request.FILES["photo"]
     r.paper = request.FILES["document"]
     r.save()
+    messages.success(request, 'Your Research Post Successfully!!')
     return render(request,"ScholarUI/welcome.html",{})

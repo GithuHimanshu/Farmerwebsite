@@ -14,6 +14,7 @@
 :root {
   --body-color: #ebebe8;
   --nav-color: #778a35;
+  /* --nav-color: rgb(255 255 255 / 80%); */
   --nav-logo-color: #d1e2c4;
   --dropdown-color: #f9f9f9;
   --dropdown-text-color: #010718;
@@ -68,6 +69,10 @@ nav {
 
 .scrolled {
   background: var(--nav-color);
+  /* background: rgb(255 255 255 / 80%); */
+  /* padding: 20px 0; */
+  /* border-color: #f2f2f2; */
+  /* backdrop-filter: blur(20px); */
 }
 /* body.dark .scrolled {
   background: var(--nav-color);

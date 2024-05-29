@@ -19,7 +19,7 @@ section > p {
 section .cards {
   display: flex;
   flex-wrap: wrap;
-  max-width: 1200px;
+  max-width: 1050px;
   margin-top: 50px;
   padding: 0 10px;
   justify-content: space-between;
@@ -31,13 +31,16 @@ section.about {
 }
 section .cards .card {
   background: var(--cards-bg);
-  padding: 40px 15px;
+  padding: 30px 15px;
   list-style: none;
   border-radius: 6px;
   box-shadow: var(--cards-bd);
   margin-bottom: 40px;
   text-align: center;
   cursor: pointer;
+}
+.portfolio .cards .card {
+  min-height: 200px;
 }
 section .cards .card:hover {
   transform: scale(1.07);
@@ -87,7 +90,7 @@ section .cards .card p {
 .view-more-btn {
   display: inline-block;
   margin: 1rem;
-  padding: 0.5rem 1rem;
+  padding: 10px 30px;
   background: var(--button-col);
   color: var(--text-color);
   text-decoration: none;

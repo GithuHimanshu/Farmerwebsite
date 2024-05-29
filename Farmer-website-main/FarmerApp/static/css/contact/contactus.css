@@ -33,7 +33,7 @@
 .contact-info i {
   margin-right: 10px;
   font-size: 20px;
-  color: var(--button-secondary);
+  color: var(--heading-color);
 }
 
 .social-icons {
@@ -47,6 +47,9 @@
   color: var(--cards-text);
   font-size: 30px;
   transition: color 0.3s;
+}
+.icons {
+  color: var(--heading-color);
 }
 
 .social-icons a:hover {
