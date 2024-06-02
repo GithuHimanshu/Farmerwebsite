@@ -81,6 +81,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
+<<<<<<< HEAD
     # "default": {
     #     "ENGINE": "mssql",
     #     "NAME": "KissanSevaDataBase",
@@ -98,7 +99,19 @@ DATABASES = {
     #     "PASSWORD": "sagar123",
     #     "HOST": "localhost",
     # }
+=======
+>>>>>>> 8b4c173ef5973d17381d7803712529f5fdb5c9e4
 }
+#     "default": {
+#         "ENGINE": "mssql",
+#         "NAME": "KissanSevaDataBase",
+#         "USER": "",
+#         "PASSWORD": "",
+#         "HOST": "localhost\SQLEXPRESS",
+#         "OPTIONS": {"driver": "ODBC Driver 17 for SQL Server", 
+#         },
+#     },
+# }
 
 
 # Password validation
@@ -143,10 +156,15 @@ STATIC_URL = 'static/'
 MEDIA_URL = '/media/'
 # MEDIA_ROOT = 'C:\Users\Himanshu Sharma\OneDrive\Desktop\kisan\KisaanSevaWeb\Farmer-website-main\FarmerApp\media'
 # settings.py
+<<<<<<< HEAD
 MEDIA_ROOT = r'F:\djprojact\Farmerwebsite\Farmer-website-main\FarmerApp\media'
+=======
+# MEDIA_ROOT = r'C:\Users\Himanshu Sharma\OneDrive\Desktop\kisan\KisaanSevaWeb\Farmer-website-main\FarmerApp\media'
+>>>>>>> 8b4c173ef5973d17381d7803712529f5fdb5c9e4
 
 # MEDIA_ROOT = 'C:\\Users\\sagar\\Desktop\\Kisaan seva project\\Farmer-website-main\\FarmerApp\\media'
 
+# aman
 STATICFILES_DIRS = [STATIC_DIR,]
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field

@@ -21,7 +21,47 @@
 <body>
     <div class="headerclass">
 
+<<<<<<< HEAD
         {% include "navbar/navbar.html" %}
+=======
+                <input type="text" class="input-field" name="EmailId" placeholder="Email Id" required />
+                <input type="password" class="input-field" name="Logpassword" placeholder="Enter Password" required />
+
+                <div class="check">
+                    <input type="checkbox" class="check-box" /><span>Remember Password</span>
+                </div>
+                <button type="submit" class="submit-btn">Log In</button>
+            </form>
+            
+            {% for message in messages %}
+            <div style="text-align: center;color: red;margin-top: 10px;"
+            >
+            <strong> {{message}}</strong>
+            </div>
+            
+            {% endfor %}
+
+            <!-- Registration -->
+            <form id="register"  style="top: 200px;" class="input-group" action="/login/add-farmer/" method="POST">
+                {% csrf_token %}
+                <input type="text" class="input-field" id="Farmer_name" name="Farmer_name" placeholder="Farmer Name"
+                    required />
+
+                <input type="number" class="input-field" id="Contact_num" name="Contact_num"
+                    placeholder="Contact Number" />
+
+                <input type="email" class="input-field" id="Email_id" name="Email_id" placeholder="Enter Email Id"
+                    required />
+                <input type="password" class="input-field" id="Password" name="Password" placeholder="Enter Password"
+                    required />
+                <div class="check">
+                    <input type="checkbox" class="check-box" required /><span>
+                        I agree to the Terms & Conditions</span>
+                </div>
+                <button type="submit" class="submit-btn">Register</button>
+            </form>
+        </div>
+>>>>>>> 8b4c173ef5973d17381d7803712529f5fdb5c9e4
     </div>
     <div class="error-massages">
         {% include 'massage/massage.html' %}

@@ -21,7 +21,45 @@
 <body>
     <div class="headerclass">
 
+<<<<<<< HEAD
         {% include "navbar/navbar.html" %}
+=======
+            <form id="login" class="input-group" action="/login/loginscholar/" method="POST">
+                {% csrf_token %}
+                <input type="text" name="scholarEmail" class="input-field" placeholder="Email Id" required />
+                <input type="password" name="scholarPassword" class="input-field" placeholder="Enter Password" required />
+
+                <div class="check">
+                    <input type="checkbox" class="check-box" /><span>Remember Password</span>
+                </div>
+                <button type="submit" class="submit-btn">Log In</button>
+            </form>
+            {% for message in messages %}
+        
+            <div style="text-align: center;color: red;"
+            >
+                <strong> {{message}}</strong>
+            </div>
+         
+            {% endfor %}
+
+            <!-- Registration -->
+            <form id="register" class="input-group" action="/login/add-scholar/" method="POST">
+            {% csrf_token %}
+            <input type="text" name="Scholar_name" class="input-field" placeholder="Scholar Name" required />
+
+            <input type="number" name="Contact_num" class="input-field" placeholder="Contact Number" required />
+
+            <input type="email" name="Email_id" class="input-field" placeholder="Enter Email Id" required />
+            <input type="password" name="Password" class="input-field" placeholder="Enter Password" required />
+            <div class="check">
+            <input type="checkbox" class="check-box" required /><span>
+            I agree to the Terms & Conditions</span>
+            </div>
+            <button type="submit" class="submit-btn">Register</button>
+            </form>
+        </div>
+>>>>>>> 8b4c173ef5973d17381d7803712529f5fdb5c9e4
     </div>
     <div class="error-massages">
         {% include 'massage/massage.html' %}

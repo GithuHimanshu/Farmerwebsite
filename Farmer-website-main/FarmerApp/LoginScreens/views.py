@@ -12,18 +12,14 @@ def scholarlogin(request):
 
 def add_farmer(request):
   if request.method == "POST":
-    farmer_name = request.POST.get("Farmer_name")
-    contact_num = request.POST.get("Contact_num")
-    email_id = request.POST.get("Email_id")
-    password = request.POST.get("Password")
     f = farmer()
-    f.Farmer_name = farmer_name
-    f.Contact_num = contact_num
-    f.Email_id = email_id
-    f.Password = password
-  # f.save()
+    f.Farmer_name = request.POST.get("Farmer_name")
+    f.Contact_num = request.POST.get("Contact_num")
+    f.Email_id = request.POST.get("Email_id")
+    f.Password = request.POST.get("Password")
+    
   # checking existing -
-    check_existing = farmer.objects.filter(Farmer_name=farmer_name) and farmer.objects.filter(Contact_num = contact_num) and farmer.objects.filter(Email_id = email_id) and farmer.objects.filter(Password = password).exists()
+    check_existing = farmer.objects.filter(Farmer_name=f.Farmer_name) and farmer.objects.filter(Contact_num = f.Contact_num) and farmer.objects.filter(Email_id = f.Email_id) and farmer.objects.filter(Password = f.Password).exists()
     if check_existing:
       messages.error(request,"The email address is already in use by another account.!! Please login...")
       return redirect('/login/farmerlogin/')
@@ -79,6 +75,26 @@ def add_scholar(request):
     s.save()
     messages.success(request,'Your Account has been created successfully!! Please login')
     return redirect('/login/scholarlogin/')
+<<<<<<< HEAD
+=======
+
+
+
+def loginfarmer(request):
+  if request.method == "POST":
+    f = farmer()
+    f.Email_id = request.POST.get("EmailId")
+    f.Password = request.POST.get("Logpassword")
+
+  # checking existing -
+  check_existing =farmer.objects.filter(Email_id = f.Email_id) and farmer.objects.filter(Password = f.Password).exists()
+
+  if check_existing:
+    return render(request,"home/index.html",{})
+  else:
+    messages.success(request,"please register yourself first....")
+    return redirect('/login/farmerlogin/')
+>>>>>>> 8b4c173ef5973d17381d7803712529f5fdb5c9e4
   
 def loginscholar(request):
     if request.method == "POST":

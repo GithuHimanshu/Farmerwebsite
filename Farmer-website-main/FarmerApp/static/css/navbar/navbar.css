@@ -12,6 +12,7 @@
 
 /* ===== Colours ===== */
 :root {
+<<<<<<< HEAD:Farmer-website-main/FarmerApp/static/css/navber/navber.css
   --body-color: #ebebe8;
   --nav-color: #59981ace;
   /* --nav-color: rgb(255 255 255 / 80%); */
@@ -21,6 +22,15 @@
   --side-nav: #778a35;
   --text-color: #fefbf6;
   --heading-color: #145214d5;
+=======
+  --body-color: #ffffdd;
+  --nav-color: #4fa126e0;
+  --dropdown-color: #f9f9f9;
+  --dropdown-text-color: #010718;
+  --side-nav: #569d19d5;
+  --text-color: #c8f7f6;
+  --heading-color: #83c33b;
+>>>>>>> 8b4c173ef5973d17381d7803712529f5fdb5c9e4:Farmer-website-main/FarmerApp/static/css/navbar/navbar.css
   --search-bar: #f2f2f2;
   --search-text: #31352e;
   --sub-heading: #31352e;
@@ -47,7 +57,11 @@ body.dark {
   --nav-color: #242526;
   --side-nav: #242526;
   --text-color: #ccc;
+<<<<<<< HEAD:Farmer-website-main/FarmerApp/static/css/navber/navber.css
   --heading-color: #778a35;
+=======
+  --heading-color: #d3a83b;
+>>>>>>> 8b4c173ef5973d17381d7803712529f5fdb5c9e4:Farmer-website-main/FarmerApp/static/css/navbar/navbar.css
   --search-bar: #242526;
   --dropdown-color: #18191a;
   --dropdown-text-color: #ccc;
