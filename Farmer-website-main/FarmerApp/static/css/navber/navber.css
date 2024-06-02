@@ -13,14 +13,14 @@
 /* ===== Colours ===== */
 :root {
   --body-color: #ebebe8;
-  --nav-color: #778a35;
+  --nav-color: #59981ace;
   /* --nav-color: rgb(255 255 255 / 80%); */
   --nav-logo-color: #d1e2c4;
   --dropdown-color: #f9f9f9;
   --dropdown-text-color: #010718;
   --side-nav: #778a35;
   --text-color: #fefbf6;
-  --heading-color: #59981ace;
+  --heading-color: #145214d5;
   --search-bar: #f2f2f2;
   --search-text: #31352e;
   --sub-heading: #31352e;
@@ -34,7 +34,7 @@
   --button-secondary: #145214;
 
   --footer-bg: #333333;
-  --cards-heading: #81b622;
+  --cards-heading: #145214e3;
   --cards-bd: 20px 20px 60px #00000041, inset -20px -20px 60px #ffffff40;
 }
 body {
